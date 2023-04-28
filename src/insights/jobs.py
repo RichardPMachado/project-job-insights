@@ -60,7 +60,7 @@ def filter_by_job_type(jobs: List[Dict], job_type: str) -> List[Dict]:
     list
         List of jobs with provided job_type
     """
-    raise NotImplementedError
-
-
-read("data/jobs.csv")
+    jobs_filtered_by_type = list(filter(
+        lambda job: job["job_type"] == job_type, jobs))
+    # print(jobs_by_type)
+    return jobs_filtered_by_type
